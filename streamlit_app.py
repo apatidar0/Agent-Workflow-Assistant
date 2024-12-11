@@ -15,7 +15,7 @@ def get_or_create_thread():
     if 'thread_id' not in st.session_state:
         thread = client.beta.threads.create(tool_resources={
   "file_search": {
-    "vector_store_ids": ["VECTOR_STORE_ID"]
+    "vector_store_ids": [VECTOR_STORE_ID]
   }})
         st.session_state['thread_id'] = thread.id
     return st.session_state['thread_id']
